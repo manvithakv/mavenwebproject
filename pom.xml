@@ -10,6 +10,7 @@
   <packaging>war</packaging>
 
   <name>mavenproject2 Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -27,22 +28,11 @@
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
-
-  <!-- Distribution Management for GitHub Packages -->
-  <distributionManagement>
-    <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/manvithakv/mavenwebproject</url>
-    </repository>
-    <snapshotRepository>
-      <id>github-snapshots</id>
-      <url>https://maven.pkg.github.com/manvithakv/mavenwebproject</url>
-    </snapshotRepository>
-  </distributionManagement>
 
   <build>
     <finalName>mavenproject2</finalName>
@@ -79,5 +69,14 @@
       </plugins>
     </pluginManagement>
   </build>
-</project>
 
+  <!-- Distribution Management Section -->
+  <distributionManagement>
+    <repository>
+      <id>example-repo</id>
+      <name>Release Repository</name>
+      <url>https://your-repository-url</url>
+    </repository>
+  </distributionManagement>
+
+</project>
