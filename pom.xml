@@ -10,7 +10,6 @@
   <packaging>war</packaging>
 
   <name>mavenproject2 Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -32,17 +31,27 @@
       <version>2.5</version>
     </dependency>
   </dependencies>
-  
+
+  <!-- Distribution Management for GitHub Packages -->
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY</url>
+    </repository>
+    <snapshotRepository>
+      <id>github-snapshots</id>
+      <url>https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <build>
     <finalName>mavenproject2</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.4.0</version>
         </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
@@ -71,3 +80,4 @@
     </pluginManagement>
   </build>
 </project>
+
