@@ -36,11 +36,11 @@
   <distributionManagement>
     <repository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY</url>
+      <url>https://maven.pkg.github.com/manvithakv/mavenwebproject</url>
     </repository>
     <snapshotRepository>
       <id>github-snapshots</id>
-      <url>https://maven.pkg.github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY</url>
+      <url>https://maven.pkg.github.com/manvithakv/mavenwebproject</url>
     </snapshotRepository>
   </distributionManagement>
 
