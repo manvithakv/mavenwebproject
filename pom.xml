@@ -65,6 +65,9 @@
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.2</version>
+          <configuration>
+            <altDeploymentRepository>deployment-repo::default::https://your-repository-url</altDeploymentRepository>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -77,6 +80,11 @@
       <name>Release Repository</name>
       <url>https://your-repository-url</url>
     </repository>
+    <snapshotRepository>
+      <id>example-repo-snapshots</id>
+      <name>Snapshot Repository</name>
+      <url>https://your-repository-url/snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
 
 </project>
