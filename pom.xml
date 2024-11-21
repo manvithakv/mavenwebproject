@@ -2,89 +2,108 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mavenweb</groupId>
-  <artifactId>mavenproject2</artifactId>
+  <!-- Group ID, Artifact ID, and Version for your project -->
+  <groupId>com.app.demo</groupId>
+  <artifactId>SampleMavenJavaProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
 
-  <name>mavenproject2 Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
+  <!-- Project name and website -->
+  <name>SampleMavenJavaProject</name>
   <url>http://www.example.com</url>
 
   <properties>
+    <!-- Define the project encoding and Java version to be used -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <!-- JUnit dependency for testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Servlet API dependency (used in web applications) -->
     <dependency>
       <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>
 
   <build>
-    <finalName>mavenproject2</finalName>
     <pluginManagement>
+      <!-- Define the plugins and their versions to ensure consistency -->
       <plugins>
+        
+        <!-- Maven Clean Plugin to remove previously generated artifacts -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.1.0</version>
         </plugin>
+        
+        <!-- Maven Resources Plugin to handle copying of resources -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>3.0.2</version>
         </plugin>
+
+        <!-- Maven Compiler Plugin to compile the source code -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.13.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.3.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.4.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.2</version>
+          <version>3.8.0</version>
           <configuration>
-            <altDeploymentRepository>deployment-repo::default::https://your-repository-url</altDeploymentRepository>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
           </configuration>
         </plugin>
+
+        <!-- Maven Surefire Plugin for running unit tests -->
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+
+        <!-- Maven Jar Plugin to create a JAR file of the project -->
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+
+        <!-- Maven Install Plugin to install artifacts to the local repository -->
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+
+        <!-- Maven Deploy Plugin for deployment of the project -->
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+
+        <!-- Maven Site Plugin for generating project site documentation -->
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+
+        <!-- Maven Project Info Reports Plugin for generating project reports -->
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
-
-  <!-- Distribution Management Section -->
-  <distributionManagement>
-    <repository>
-      <id>example-repo</id>
-      <name>Release Repository</name>
-      <url>https://your-repository-url</url>
-    </repository>
-    <snapshotRepository>
-      <id>example-repo-snapshots</id>
-      <name>Snapshot Repository</name>
-      <url>https://your-repository-url/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
 
 </project>
